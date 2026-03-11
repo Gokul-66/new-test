@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();   
 
-const url = process.env.MONGODB_URI || 'mongodb+srv://ride_user:rideUser123User@cluster0.s2vjsrm.mongodb.net/e-commerce?retryWrites=true&w=majority';
+const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/yourdbname';
 const connectDB = async () => {
   try {
     await mongoose.connect(url);
