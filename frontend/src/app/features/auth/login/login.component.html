@@ -1,0 +1,26 @@
+<div class="form-box">
+  <form class="form" (ngSubmit)="onSubmit()">
+    <span class="title">{{ isLoginMode ? 'Log in' : 'Sign up' }}</span>
+    <span class="subtitle">{{ isLoginMode ? 'Welcome back! Please enter your details.' : 'Create a free account with
+      your email.' }}</span>
+
+    <div class="form-container">
+      <input *ngIf="!isLoginMode" type="text" class="input" [(ngModel)]="name" [ngModelOptions]="{standalone: true}"
+        placeholder="User Name">
+      <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="input" placeholder="Email">
+      <input type="password" class="input" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"
+        placeholder="Password">
+      <input *ngIf="!isLoginMode" type="text" class="input" [(ngModel)]="address" [ngModelOptions]="{standalone: true}"
+        placeholder="Address">
+    </div>
+
+    <button type="submit">{{ isLoginMode ? 'Log in' : 'Sign up' }}</button>
+  </form>
+
+  <div class="form-section">
+    <p>
+      {{ isLoginMode ? "Don't have an account?" : "Have an account?" }}
+      <a href="javascript:void(0)" (click)="toggleMode()">{{ isLoginMode ? 'Sign up' : 'Log in' }}</a>
+    </p>
+  </div>
+</div>
